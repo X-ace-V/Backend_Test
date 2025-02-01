@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend  # Path to your backend directory
+      dockerfile: Dockerfile-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb # if you are using mongodb
+    environment:
+      - PORT=3000
+      - DB_URL=mongodb://mongodb:27017/your_db_name # change your db name
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - ./backend:/app # Mount the backend code for development
+
+  frontend:
+    build:
+      context: ./frontend  # Path to your frontend directory
+      dockerfile: Dockerfile-frontend
+    ports:
+      - "80:80"  # Map port 80 on the host to 80 in the container
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+
+  mongodb: # if you are using mongodb
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db # persist data
+
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mongodb_data_container:
+  redis_data:

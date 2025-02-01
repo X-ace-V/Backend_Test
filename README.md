@@ -22,7 +22,7 @@ A backend application designed to manage Frequently Asked Questions (FAQs) with 
 - Caching: Redis
 - Translation: Google Translate API
 - Rich Text Editor: Integrated via a suitable middleware
-- Testing: Mocha, Chai
+- Testing: JEST
 
 ## Project Structure
 
@@ -138,4 +138,73 @@ An admin interface is available for managing FAQs. It provides functionalities t
 ```bash
 npm test
 ```
+
+# Setup Instructions:- Frontend
+
+```bash
+cd frontend
+npm i
+npm run dev
+```
+
+- by doing the above steps frontend will start working
+
+
+# Contribution Guidelines
+
+- Fork the Repository: Click on the 'Fork' button at the top right of the repository page
+
+- Clone Your Fork:
+
+```bash
+git clone https://github.com/your-username/Backend_Test.git
+cd Backend_Test/backend
+```
+
+- Create a New Branch:
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+- Make Your Changes: Implement your feature or fix.
+
+- Commit Your Changes:
+
+```bash
+git add .
+git commit -m "feat: Description of your feature"
+```
+- Push to Your Fork:
+
+```bash
+git push origin feature/your-feature-name
+```
+
+# docker Instruction: Backend
+
+- Create a Dockerfile in the root directory of your backend project.
+
+- Run the following commands to build and run the Docker container:
+
+```bash
+docker build -t backend-app .
+docker run -p 3000:3000 backend-app
+```
+
+# docker Instruction: Frontend
+
+- Create a Dockerfile in the root directory of your React project.
+
+- Run the following commands to build and run the Docker container:
+
+```bash
+docker build -t react-app .
+docker run -p 80:80 react-app
+```
+
+# License
+
+This project is licensed under the ISC License.
+
 

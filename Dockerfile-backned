@@ -1,0 +1,12 @@
+FROM node:16-alpine  # Use a smaller base image
+
+WORKDIR /app
+
+COPY package*.json ./  # Copy package files first for caching
+RUN npm install
+
+COPY . .  # Copy the rest of the backend code
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"] # start command (npm run dev)
