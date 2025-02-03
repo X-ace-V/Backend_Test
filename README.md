@@ -26,6 +26,7 @@ A backend application designed to manage Frequently Asked Questions (FAQs) with 
 
 ## Project Structure
 
+```bash
 Backend_Test/
 |-- backend/
 |   |-- src/
@@ -51,6 +52,7 @@ Backend_Test/
 |   |-- package.json
 |-- .gitignore
 |-- README.md
+```
 
 # Setup Instructions:- Backend
 
