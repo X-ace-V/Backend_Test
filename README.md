@@ -85,6 +85,7 @@ PORT=3000
 DB_URL=your_mongodb_connection_string
 REDIS_HOST=localhost
 REDIS_PORT=6379
+NODE_ENV='development'
 ```
 
 
